@@ -1,0 +1,93 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Βρες το σωστό</title>
+<style>
+    #maincontent {
+        background: #e1dbd1;
+        padding-top: 20px;
+        width: 500px;
+        margin: auto;
+        text-align: center;
+    }
+    h1 {
+    border-bottom: 5px solid red;
+}
+
+
+</style>
+</head>
+<body onload="arxi()">
+    <div id="Maincontent">
+        <h1>Βρές το σωστό</h1>
+        <h2 id="erotisi"></h2>
+        <p>Οι πόντοι σου: <span id="score1"></span></p>
+        <p>Γράψε την απάντηση: <input type="text" value="" id="apantisi"/></p>
+        <p>Αποτελέσμα: <span id="apotelesma"></span></p>
+        <input type="button" value="ελεγχος" onclick="elenxos()">
+        <input type="button" value="επομενο" onclick="epomeno()"><br><br>
+        <audio id="myAudio">
+            <source src="15-Cartoon-sound-effect.wav" type="audio/wav">
+        </audio>
+        <audio id="myAudio1">
+                <source src="37-Cartoon-sound-effect.wav" type="audio/wav">
+            </audio>
+        
+    </div>   
+</body>
+<script>
+var score = 0;
+var a = document.getElementById ("erotisi")
+var b = document.getElementById ("apantisi")
+var c = document.getElementById ("apotelesma")
+var er = ["5+5", "100 / 2", "59-9"];
+var ap = ["10", "50", "50"];
+var n =0
+var x = document.getElementById("myAudio");
+var e = document.getElementById("myAudio1");
+var l = document.getElementById("score1"); 
+function arxi()
+{
+    a.innerHTML = er[n];
+}
+function elenxos()
+{
+    if (b.value == ap[n])
+    {
+        c.innerHTML = "ΣΩΣΤΟ";
+        c.style.color = "green";
+        x.play();
+        score = score + 1;
+    }
+    else
+    {
+        c.innerHTML = "ΛΑΘΟΣ"
+        c.style.color = "red";
+        e.play();
+        score = score -0;
+    }
+    l.innerHTML = score;
+
+}
+function epomeno()
+{
+    if (n<2)
+    {
+        n++;
+    }
+    else
+    {
+        n=0;
+    }
+    a.innerHTML = er[n];
+}
+
+
+
+</script>
+
+
+
+
+</html>
